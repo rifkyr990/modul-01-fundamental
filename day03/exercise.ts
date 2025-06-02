@@ -64,6 +64,15 @@ for (let i = 0; i < angka3 + 1; i++) {
 
 console.log(`${angka3} adalah ${total}`);
 
+/* 
+
+Soal No.4
+
+Write a code to find factorial of a number
+○ Example: 4! → 4 x 3 x 2 x 1 = 24
+○ Example: 6! → 6 x 5 x 4 x 3 x 2 x 1 = 720
+*/
+
 let angka4 :number = 4;
 let factorial :number = 1;
 
