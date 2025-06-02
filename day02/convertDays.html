@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let day = prompt("masukan jumlah hari : ");
+
+        const years = Math.floor(day / 365);
+        console.log(years);
+
+        if (day <= 365) {
+            const months = Math.floor(day / 30);
+            console.log(months);
+
+            const days = Math.floor(day % 30);
+            console.log(days);
+
+            alert(`hasil konversi dari ${day} hari,adalah ${years} tahun ${months} bulan ${days} hari`);
+            
+        } else {
+            const months = Math.floor((day - 365) / 30);
+            console.log(months);
+
+            const days = Math.floor((day - 365) % 30);
+            console.log(days);
+
+            alert(`hasil konversi dari ${day} hari,adalah ${years} tahun ${months} bulan ${days} hari`);
+        }
+
+
+    </script>
+</body>
+
+</html>

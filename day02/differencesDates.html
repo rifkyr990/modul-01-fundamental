@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let inputTanggal1 = prompt("masukan tanggal pertama : \ncontoh : 2025-05-26");
+        let inputTanggal2 = prompt("masukan tanggal kedua : \ncontoh : 2025-05-26");
+
+        let tanggal1 = new Date(inputTanggal1);
+        let tanggal2 = new Date(inputTanggal2);
+
+        if (isNaN(tanggal1) || isNaN(tanggal2)) {
+            alert("kesalahan input");
+        } else {
+            let perbandingan = Math.abs(tanggal2 - tanggal1);
+            const hasilPerbandingan = Math.floor(perbandingan / (1000 * 60 * 60 * 24));
+
+            alert(`perbandingan hari antara tanggal ${tanggal1.toLocaleDateString("id")} dan ${tanggal2.toLocaleDateString("id")} adalah ${hasilPerbandingan} hari`);
+        }
+    </script>
+</body>
+
+</html>
