@@ -6,12 +6,12 @@ Write a code to check whether the number is odd or even
 ○ Example: 25 → odd number, 2 → even number
 */
 
-let angka1 :number = 2;
+let angka1 :number = 20;
 
-if (angka1 % 2) {
-    console.log(`${angka1} adalah genap`);
-} else {
+if (angka1 % 2 !== 0) {
     console.log(`${angka1} adalah ganjil`);
+} else {
+    console.log(`${angka1} adalah genap`);
 }
 
 /*
@@ -43,7 +43,6 @@ if (prima) {
     console.log(`${angka2} adalah prima`);
 } else {
     console.log(`${angka2} bukan prima`);
-    
 }
 
 /*
@@ -57,8 +56,7 @@ Write a code to find the sum of the numbers 1 to N
 let angka3 :number = 5;
 let total :number = 0;
 
-for (let i = 0; i < angka3 + 1; i++) {
-    console.log(i);
+for (let i = 0; i <= angka3; i++) {
     total += i;
 }
 
