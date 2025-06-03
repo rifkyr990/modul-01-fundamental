@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let menu = [];
+
+        function displayMenu() {
+            if (menu.length === 0) {
+                alert("Menu kosong.");
+                return;
+            } else {
+                let output = "=== Daftar Menu Warung Uda Asdi ===\n";
+                for (let i = 0; i < menu.length; i++) {
+                    output += `${i + 1}. ${menu[i]}\n`;
+                }
+                alert(output);
+            }
+        }
+
+        function tambahMenu() {
+            let inputMenu = prompt("Masukan menu yang akan ditambahkan :");
+            if (inputMenu && inputMenu.trim() !== "") {
+                menu.push(inputMenu.trim());
+            } else {
+                alert("input gagal");
+            }
+        }
+
+        function updateMenu() {
+            displayMenu();
+            let index = parseInt(prompt("Masukkan nomor menu yang ingin diupdate:"));
+            if (!isNaN(index) && index > 0 && index <= menu.length) {
+                let inputMenu = prompt("Masukan nama menu baru:");
+                if (inputMenu && inputMenu.trim() !== "") {
+                    menu[index - 1] = inputMenu.trim();
+                    alert("Menu berhasil diupdate.");
+                } else {
+                    alert("Input gagal");
+                }
+            } else {
+                alert("Menu yang dipilih tidak valid");
+            }
+        }
+
+        function deleteMenu() {
+            displayMenu();
+            let index = parseInt(prompt("Masukkan nomor menu yang ingin dihapus:"));
+            if (!isNaN(index) && index > 0 && index <= menu.length) {
+                let itemHapus = menu.splice(index-1, 1);
+                alert(`Menu "${itemHapus}" berhasil dihapus.`);
+            } else {
+                alert("Menu yang dipilih tidak valid.");
+            }
+        }
+
+        let optionMenu;
+        do {
+            optionMenu = prompt(
+                "=== CRUD Menu Warung Uda Asdi === \n 1. Lihat menu \n 2. Tambah menu \n 3. Update menu \n 4. Hapus menu \n 5. Keluar"
+            );
+            switch (optionMenu) {
+                case "1":
+                    displayMenu();
+                    break;
+                case "2":
+                    tambahMenu();
+                    break;
+                case "3":
+                    updateMenu();
+                    break;
+                case "4":
+                    deleteMenu();
+                    break;
+                default:
+                    alert("pilihan tidak valid.");
+            }
+
+        } while (optionMenu !== "4");
+    </script>
+</body>
+
+</html>
