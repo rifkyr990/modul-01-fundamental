@@ -11,18 +11,15 @@ a. Example : arr = [12, 5, 23, 18, 4, 45, 32] → {lowest : 4, highest: 45, aver
 const array = [1, 2, 3];
 
 function arraySort(array: number[]) {
-    let sum: number = 0;
-
-    const getMinimum: number = Math.min(...array);
-    const getMaximum: number = Math.max(...array);
-    array.forEach((element) => {
-        sum += element;
-    });
+    let sort = [...array].sort((a,b) => a-b);
+    const getMinimum = sort[0];
+    const getMaximum = sort[sort.length -1];
+    const total = array.reduce((sum, val) => sum + val)/array.length;
 
     return {
         getMinimum,
         getMaximum,
-        sum
+        total
     }
 }
 console.log(arraySort(array));
@@ -30,25 +27,25 @@ console.log(arraySort(array));
 // tanpa sort
 
 function arrayWithoutSort(array: number[]) {
-    let getMinimum = array[0];
-    let getMaximum = array[0];
-    let sum: number = 0;
+    let getMinimum :number = array[0];
+    let getMaximum :number = array[0];
+    let sum :number = 0;
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
+    for (const element of array) {
         if (element < getMinimum) {
             getMinimum = element;
-        }
-        if (element > getMaximum) {
+        } if (element > getMaximum) {
             getMaximum = element;
         }
         sum += element;
     }
 
+    const total = sum/array.length;
+    
     return {
         getMinimum,
         getMaximum,
-        sum
+        total
     }
 }
 
@@ -118,4 +115,4 @@ function addArray(a :number[], b :number) {
         return [...a, b];
     }
 }
-console.log(addArray([1,2,3], 4));
+console.log(addArray([1,3,4], 4));
