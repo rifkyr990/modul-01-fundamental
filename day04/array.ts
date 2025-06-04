@@ -26,15 +26,15 @@ console.log(daftarSiswas[1]);
 
 /* 6. forEach() – Melakukan sesuatu untuk setiap elemen */
 
-let angka1 = [1, 2, 3];
-angka1.forEach(function (item, index) {
+let angka11 = [1, 2, 3];
+angka11.forEach(function (item, index) {
     console.log(`Index ${index}: ${item}`);
 });
 
 /* 7. map() – Mengubah setiap elemen dan menghasilkan array baru */
 
-let angka2 = [1, 2, 3];
-let kuadrat = angka2.map(function (item) {
+let angka21 = [1, 2, 3];
+let kuadrat = angka21.map(function (item) {
     return item * item;
 });
 console.log(kuadrat); // [1, 4, 9]

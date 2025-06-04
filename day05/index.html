@@ -9,7 +9,10 @@
 
 <body>
     <script>
-        let menu = [];
+        let menu = [
+            ["rendang", 12000, 12],
+            ["gulai ikan", 10000, 3]
+        ];
 
         function displayMenu() {
             if (menu.length === 0) {
@@ -18,16 +21,20 @@
             } else {
                 let output = "=== Daftar Menu Warung Uda Asdi ===\n";
                 for (let i = 0; i < menu.length; i++) {
-                    output += `${i + 1}. ${menu[i]}\n`;
+                    output +=
+                        `${i + 1}. ${menu[i][0]} harga ${menu[i][1].toLocaleString("id", {style: "currency",currency: "IDR",})} stok ${menu[i][2]} \n`;
                 }
                 alert(output);
             }
         }
 
         function tambahMenu() {
-            let inputMenu = prompt("Masukan menu yang akan ditambahkan :");
-            if (inputMenu && inputMenu.trim() !== "") {
-                menu.push(inputMenu.trim());
+            let namaMenu = prompt("Masukan menu yang akan ditambahkan :");
+            let hargaMenu = parseInt(prompt("Masukan harga menu yang akan ditambahkan :"));
+            let stokMenu = parseInt(prompt("Masukan stok menu yang akan ditambahkan :"));
+
+            if (namaMenu && namaMenu.trim() !== "") {
+                menu.push([namaMenu, hargaMenu, stokMenu]);
             } else {
                 alert("input gagal");
             }
@@ -37,13 +44,28 @@
             displayMenu();
             let index = parseInt(prompt("Masukkan nomor menu yang ingin diupdate:"));
             if (index > 0 && index <= menu.length) {
-                let inputMenu = prompt("Masukan nama menu baru:");
-                if (inputMenu && inputMenu.trim() !== "") {
-                    menu[index - 1] = inputMenu.trim();
-                    alert("Menu berhasil diupdate.");
+                const pilihUpdate = parseInt(prompt(
+                    "pilih mana yang akan diupdate : \n 1. Nama \n 2. Harga \n 3. Stok"))
+
+                if (pilihUpdate == 1) {
+
+                    let namaMenu = prompt("Masukan menu yang akan ditambahkan :");
+                    menu[index - 1][0] = namaMenu.trim();
+
+                } else if (pilihUpdate == 2) {
+
+                    let hargaMenu = parseInt(prompt("Masukan harga menu yang akan ditambahkan :"));
+                    menu[index - 1][1] = hargaMenu;
+
+                } else if (pilihUpdate == 3) {
+
+                    let stokMenu = parseInt(prompt("Masukan stok menu yang akan ditambahkan :"));
+                    menu[index - 1][2] = stokMenu;
+
                 } else {
-                    alert("Input gagal");
+                    alert("input tidak valid");
                 }
+
             } else {
                 alert("Menu yang dipilih tidak valid");
             }
@@ -53,7 +75,7 @@
             displayMenu();
             let index = parseInt(prompt("Masukkan nomor menu yang ingin dihapus:"));
             if (index > 0 && index <= menu.length) {
-                let itemHapus = menu.splice(index-1, 1);
+                let itemHapus = menu.splice(index - 1, 1);
                 alert(`Menu "${itemHapus}" berhasil dihapus.`);
             } else {
                 alert("Menu yang dipilih tidak valid.");
