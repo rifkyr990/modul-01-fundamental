@@ -8,7 +8,7 @@ a. Example : arr = [12, 5, 23, 18, 4, 45, 32] → {lowest : 4, highest: 45, aver
 
 // sort
 
-const array = [1, 2, 3];
+const array = [12, 5, 23, 18, 4, 45, 32];
 
 function arraySort(array: number[]) {
     let sort = [...array].sort((a,b) => a-b);
@@ -41,7 +41,7 @@ function arrayWithoutSort(array: number[]) {
     }
 
     const total = sum/array.length;
-    
+
     return {
         getMinimum,
         getMaximum,
@@ -115,4 +115,4 @@ function addArray(a :number[], b :number) {
         return [...a, b];
     }
 }
-console.log(addArray([1,3,4], 4));
+console.log(addArray([1,3,4], 5));
