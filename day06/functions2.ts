@@ -93,7 +93,7 @@ console.log(convertToRP);
 */
 
 function duplicateMap(array, callbackFn) {
-    const output = [];
+    const output :number[] = [];
     for (const element of array) {
         output.push(callbackFn(element));
     }

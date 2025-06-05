@@ -70,12 +70,10 @@ b. Example : arr1 = [1, 2, 3, 4, 5], arr2 = [3, 4, 5, 6, 7] → [1, 2, 6, 7]
 */
 
 function mixArray(arrayA, arrayB) {
-    const mixArray = arrayA.concat(arrayB);
-    const output = mixArray.filter((item, index) =>{
-        return mixArray.indexOf(item) === index;
-    });
+    let outputA = arrayA.filter((e)=>!arrayB.includes(e));
+    let outputB = arrayB.filter((e)=>!arrayA.includes(e));
 
-    return output;
+    return [...outputA, ...outputB];
 }
 
 console.log(mixArray([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
