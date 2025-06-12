@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculationGame(opt) {
+            let com = Math.floor(Math.random() * 3) + 1;
+            let convertToString = com.toString();
+
+            if (opt === "1" && convertToString === "3") {
+                alert(`PLAYER : GUNTING vs MUSUH : KERTAS \nHasil pertandingan : WIN`);
+                win++;
+            } else if (opt === "1" && convertToString === "2") {
+                alert(`PLAYER : GUNTING vs MUSUH : BATU \nHasil pertandingan : LOSE`);
+                lose++;
+            } else if (opt === "1" && convertToString === "1") {
+                alert(`PLAYER : GUNTING vs MUSUH : GUNTING \nHasil pertandingan : DRAW`);
+                draw++;
+            } else if (opt === "2" && convertToString === "1") {
+                alert(`PLAYER : BATU vs MUSUH : GUNTING \nHasil pertandingan : WIN`);
+                win++;
+            } else if (opt === "2" && convertToString === "2") {
+                alert(`PLAYER : BATU vs MUSUH : BATU \nHasil pertandingan : DRAW`);
+                draw++;
+            } else if (opt === "2" && convertToString === "3") {
+                alert(`PLAYER : BATU vs MUSUH : KERTAS \nHasil pertandingan : LOSE`);
+                lose++;
+            } else if (opt === "3" && convertToString === "2") {
+                alert(`PLAYER : KERTAS vs MUSUH : BATU \nHasil pertandingan : WIN`);
+                win++;
+            } else if (opt === "3" && convertToString === "3") {
+                alert(`PLAYER : KERTAS vs MUSUH : KERTAS \nHasil pertandingan : DRAW`);
+                draw++;
+            } else if (opt === "3" && convertToString === "1") {
+                alert(`PLAYER : KERTAS vs MUSUH : GUNTING \nHasil pertandingan : LOSE`);
+                lose++;
+            }
+            alert(`win : ${win} \n lose : ${lose} \n draw : ${draw}`);
+        }
+        let option;
+
+        let win = 0;
+        let draw = 0;
+        let lose = 0;
+
+        do {
+            alert("Wellcome to suit game");
+            option = prompt("Select one : \n 1. Gunting \n 2. Batu \n 3. Kertas");
+
+            switch (option) {
+                case "1":
+                case "2":
+                case "3":
+                    calculationGame(option);
+                    break;
+                default:
+                    alert("Pilihan tidak valid!");
+                    break;
+            }
+        } while (confirm("Main lagi?"));
+    </script>
+</body>
+
+</html>
