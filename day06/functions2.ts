@@ -1,4 +1,4 @@
-/* Callback function :  - sebuah fungsi yang dijalanka dalam fungsi lain dan dimasukan melalui parameter.
+/* Callback function :  - sebuah fungsi yang dijalankan dalam fungsi lain dan dimasukan melalui parameter.
                         - sebuah fungsi yang langsung dibuat didalam parameter fungsi lain.
 */
 

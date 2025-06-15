@@ -32,6 +32,13 @@ console.log(mergeArray(arrayA, arrayB));
 // Soal no.2
 const obj = [{ name: "David", age: 20 }];
 
+for (const item of obj) {
+    for (const key in item) {
+        console.log(item[key],key);
+    }
+}
+
+
 function switchValue(object) {
     const object2 = object.map(item => {
         return Object.fromEntries(
